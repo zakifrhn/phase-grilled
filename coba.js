@@ -45,5 +45,19 @@ const users = [
     }
 ]
 
-console.log(users)
-        
+const hasil = users.map((e, i)=>{
+    let data = {}
+    let total = 0
+    transactions.forEach((v, i)=>{
+        if(e.id == v.userId){
+            total = total+v.total
+        }
+    })
+
+    data.id = e.id;
+    data.name = e.name;
+    data.total = total;
+
+    return data;
+});
+console.log(hasil);
